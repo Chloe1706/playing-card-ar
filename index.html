@@ -38,14 +38,34 @@
 
 <body>
 
+  <a-scene mindar-image="imageTargetSrc: ./band-example/band.mind; autoStart: true; maxTrack: 1" embedded
+    vr-mode-ui="enabled: false" device-orientation-permission-ui="enabled: false">
+
+    <a-assets>
+      <a-asset-item id="bearModel" src="./band-example/bear/scene.gltf"></a-asset-item>
+      <a-asset-item id="raccoonModel" src="./band-example/raccoon/scene.gltf"></a-asset-item>
+    </a-assets>
+
+    <a-camera position="0 0 0" look-controls="enabled: false"></a-camera>
+
+    <a-entity mindar-image-target="targetIndex: 0">
+      <a-gltf-model rotation="90 0 0" position="0 0 0" scale="0.05 0.05 0.05" src="#raccoonModel"
+        animation-mixer></a-gltf-model>
+    </a-entity>
+
+    <a-entity mindar-image-target="targetIndex: 1">
+      <a-gltf-model rotation="90 0 0" position="0 0 0" scale="0.05 0.05 0.05" src="#bearModel"
+        animation-mixer></a-gltf-model>
+    </a-entity>
+
+  </a-scene>
+
 
   <div class="example-container">
-    <a-scene mindar-image="imageTargetSrc: ./assets/band-example/band.mind; autoStart: true; maxTrack: 1" embedded
+    <a-scene mindar-image="imageTargetSrc: ./band-example/band.mind; autoStart: true; maxTrack: 1" embedded
       vr-mode-ui="enabled: false" device-orientation-permission-ui="enabled: false">
 
   </div>
 </body>
 
 </html>
-
-<!-- adding a comment so changes show up on Github -->
